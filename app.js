@@ -17,7 +17,7 @@ function search () {
         function getHeroes(){
             if (httpRequest.readyState === XMLHttpRequest.DONE) {
                 if (httpRequest.status === 200){
-                    var res = httpRequest.responseXML;
+                    var res = httpRequest.responseText;
                     alert(res);
                 }
                 else {

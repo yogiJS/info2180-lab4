@@ -1,4 +1,4 @@
-<?php header('Access-Control-Allow-Origin: <72.252.32.8:8080>');
+<?php 
 
 $superheroes = [
   [
