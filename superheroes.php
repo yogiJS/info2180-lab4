@@ -1,4 +1,7 @@
-<?php 
+<?php  
+Header('Access-Control-Allow-Origin: *');
+Header('Access-Control-Allow-Headers: *');
+Header('Access-Control-Allow-Methods: GET,OPTIONS');
 
 $superheroes = [
   [

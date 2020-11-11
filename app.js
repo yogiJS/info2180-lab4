@@ -1,30 +1,44 @@
-window.onload = function(){
-    search();
+window.onload= function()
+{
+    searchhero();
 }
 
-function search () {
-    var btn = document.getElementById("btn");
+function searchhero () 
+{
+    var httpRequest = new XMLHttpRequest();
 
-    btn.onclick =  function() {
-        var httpRequest = new XMLHttpRequest();
+    var url = "superheroes.php";
 
-        var url = "superheroes.php";
-
+    document.getElementById("btn").onclick =  function() 
+    {
+               
         httpRequest.onreadystatechange = getHeroes;
         httpRequest.open('GET', url);
         httpRequest.send();
+        return false;
+    }
 
-        function getHeroes(){
-            if (httpRequest.readyState === XMLHttpRequest.DONE) {
-                if (httpRequest.status === 200){
+        function getHeroes () 
+        {
+            var result = document.getElementById("result");
+
+            if (httpRequest.readyState === XMLHttpRequest.DONE)
+             {
+                if (httpRequest.status === 200)
+                {
                     var res = httpRequest.responseText;
-                    alert(res);
+                    result.innerHTML = res;
                 }
                 else {
                     alert ('There was an error')
                 }
+
             }
+            
+           
         }
+   
+        
 
     }
-}
+
